@@ -1,0 +1,25 @@
+spring.application.name: pre-charge-api
+spring.profiles.active: local
+application:
+  version: 0.0.1
+
+spring:
+  config:
+    import:
+      - db-core.yml
+      - client-example.yml
+  mvc.throw-exception-if-no-handler-found: true
+  web.resources.add-mappings: false
+
+server:
+  max-http-header-size: 32KB
+  tomcat:
+    max-connections: 20000
+    threads:
+      max: 600
+      min-spare: 50
+    mbeanregistry:
+      enabled: true
+
+---
+spring.config.activate.on-profile: local

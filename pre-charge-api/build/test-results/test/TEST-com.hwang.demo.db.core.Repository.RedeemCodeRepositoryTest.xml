@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hwang.demo.db.core.Repository.RedeemCodeRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-13T07:43:20" hostname="MK-Mac-379ui-MacBookPro.local" time="0.464">
+  <properties/>
+  <testcase name="redeemCode insert test" classname="com.hwang.demo.db.core.Repository.RedeemCodeRepositoryTest" time="0.464"/>
+  <system-out><![CDATA[16:43:10.492 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@788ddc1f testClass = RedeemCodeRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2dc3271b testClass = RedeemCodeRepositoryTest, locations = '{}', classes = '{class com.hwang.demo.ApiApplication}', contextInitializerClasses = '[]', activeProfiles = '{local}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[MockkContextCustomizer(definitions=[]), org.spockframework.spring.mock.SpockContextCustomizer@0, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1cbf6e72, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@58c34bb3, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1698fc68, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@65b3a85a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@30bcf3c1, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@6581dc0a], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:43:10.523 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Activating profiles [local]
+16:43:10.526 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+$$$$$$$\                               $$$$$$\  $$\
+$$  __$$\                             $$  __$$\ $$ |
+$$ |  $$ | $$$$$$\   $$$$$$\          $$ /  \__|$$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\
+$$$$$$$  |$$  __$$\ $$  __$$\ $$$$$$\ $$ |      $$  __$$\  \____$$\ $$  __$$\ $$  __$$\ $$  __$$\
+$$  ____/ $$ |  \__|$$$$$$$$ |\______|$$ |      $$ |  $$ | $$$$$$$ |$$ |  \__|$$ /  $$ |$$$$$$$$ |
+$$ |      $$ |      $$   ____|        $$ |  $$\ $$ |  $$ |$$  __$$ |$$ |      $$ |  $$ |$$   ____|
+$$ |      $$ |      \$$$$$$$\         \$$$$$$  |$$ |  $$ |\$$$$$$$ |$$ |      \$$$$$$$ |\$$$$$$$\
+\__|      \__|       \_______|         \______/ \__|  \__| \_______|\__|       \____$$ | \_______|
+                                                                              $$\   $$ |
+                                                                              \$$$$$$  |
+                                                                               \______/
+
+pre-charge-api-0.0.1
+
+Powered by Spring Boot 2.5.3
+2022-07-13 16:43:15.950  INFO 9946 --- [    Test worker] c.h.d.d.c.R.RedeemCodeRepositoryTest     : Starting RedeemCodeRepositoryTest using Java 11.0.11 on MK-Mac-379ui-MacBookPro.local with PID 9946 (started by mk-mac-379 in /Users/mk-mac-379/IdeaProjects/test/kotlin-multi-demo/pre-charge-api)
+2022-07-13 16:43:15.952  INFO 9946 --- [    Test worker] c.h.d.d.c.R.RedeemCodeRepositoryTest     : The following profiles are active: local
+2022-07-13 16:43:16.598  INFO 9946 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-13 16:43:16.652  INFO 9946 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2022-07-13 16:43:17.042  INFO 9946 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2fcc634c-2760-34ab-9b87-095f6d761f72
+2022-07-13 16:43:17.285  INFO 9946 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pre-charge-pool - Starting...
+2022-07-13 16:43:17.463  INFO 9946 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pre-charge-pool - Start completed.
+2022-07-13 16:43:17.607  INFO 9946 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-13 16:43:17.689  INFO 9946 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-07-13 16:43:17.871  INFO 9946 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-13 16:43:18.036  INFO 9946 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists redeem_code CASCADE 
+Hibernate: 
+    
+    drop table if exists redeem_code_publish CASCADE 
+Hibernate: 
+    
+    create table redeem_code (
+       id bigint generated by default as identity,
+        created_at timestamp,
+        updated_at timestamp,
+        redeem_code varchar(255),
+        status varchar(255),
+        redeem_code_publish_id bigint,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table redeem_code_publish (
+       id bigint generated by default as identity,
+        created_at timestamp,
+        updated_at timestamp,
+        expire_at date,
+        price integer not null,
+        publish_count integer not null,
+        reason varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    alter table redeem_code 
+       add constraint FKepr7w5wrsxt3g5qwxqq7x85a5 
+       foreign key (redeem_code_publish_id) 
+       references redeem_code_publish
+2022-07-13 16:43:18.681  INFO 9946 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-13 16:43:18.690  INFO 9946 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-13 16:43:19.223  INFO 9946 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:pre-charge'
+2022-07-13 16:43:20.237  INFO 9946 --- [    Test worker] c.h.d.d.c.R.RedeemCodeRepositoryTest     : Started RedeemCodeRepositoryTest in 9.703 seconds (JVM running for 11.406)
+Hibernate: 
+    insert 
+    into
+        redeem_code_publish
+        (id, created_at, updated_at, expire_at, price, publish_count, reason) 
+    values
+        (null, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        redeem_code
+        (id, created_at, updated_at, redeem_code, redeem_code_publish_id, status) 
+    values
+        (null, ?, ?, ?, ?, ?)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "example.api",
+      "type": "com.hwang.demo.client.example.ExampleProperty",
+      "sourceType": "com.hwang.demo.client.example.ExampleProperty"
+    }
+  ],
+  "properties": [
+    {
+      "name": "example.api.example-value",
+      "type": "java.lang.String",
+      "sourceType": "com.hwang.demo.client.example.ExampleProperty"
+    }
+  ],
+  "hints": []
+}
